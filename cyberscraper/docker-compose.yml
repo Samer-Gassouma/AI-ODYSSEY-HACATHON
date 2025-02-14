@@ -11,6 +11,14 @@ services:
       - "9051:9051"  # Tor control port
     volumes:
       - ./:/app
+      - model_cache:/app/model_cache
+      - transformers_cache:/app/sentence_transformers_cache
     environment:
       - TOR_PASSWORD=scrap101User
-    privileged: true  
+      - TRANSFORMERS_CACHE=/app/sentence_transformers_cache
+      - HF_HOME=/app/model_cache
+    privileged: true
+
+volumes:
+  model_cache:
+  transformers_cache:

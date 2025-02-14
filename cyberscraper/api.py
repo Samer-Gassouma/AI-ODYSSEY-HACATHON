@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
-from scraper import RobustScraper
+from scraper import CyberScraper
 import logging
 
 app = Flask(__name__)
-scraper = RobustScraper()
+scraper = CyberScraper()
 
 @app.route('/scrape', methods=['POST'])
 def scrape():
