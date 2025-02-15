@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberScraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>CyberScraper</h1>
+        <div class="search-container">
+            <input type="text" id="urlInput" placeholder="Enter URL to scrape...">
+            <div class="options">
+                <label>
+                    <input type="checkbox" id="useTor" checked>
+                    Use Tor
+                </label>
+            </div>
+            <button onclick="startScraping()">Scrape</button>
+        </div>
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Scraping in progress...</p>
+        </div>
+        <div id="results" class="results-container"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
